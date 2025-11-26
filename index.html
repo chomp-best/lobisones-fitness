@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobisones Fitness | By Profe Tito</title>
+    
+    <!-- Tailwind CSS (Framework de diseño) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuentes de Google (Montserrat y Anton para impacto visual) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+    
+    <!-- Estilos Personalizados y Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lobison-red': '#DC2626', /* Rojo Intenso */
+                        'lobison-dark': '#0F0F0F', /* Negro Profundo */
+                        'lobison-gray': '#1F1F1F', /* Gris Oscuro */
+                    },
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'display': ['Anton', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilos adicionales para efectos especiales */
+        body {
+            background-color: #0F0F0F;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        
+        .bg-grid-pattern {
+            background-image: linear-gradient(rgba(220, 38, 38, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(220, 38, 38, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+        }
+
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Animación para los ojos del lobo */
+        @keyframes glow-eyes {
+            0%, 100% { fill: #991b1b; filter: drop-shadow(0 0 2px #ef4444); }
+            50% { fill: #ff0000; filter: drop-shadow(0 0 8px #ff0000); }
+        }
+        .wolf-eye {
+            animation: glow-eyes 3s infinite;
+        }
+    </style>
+</head>
+<body class="bg-lobison-dark bg-grid-pattern antialiased selection:bg-lobison-red selection:text-white">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="fixed w-full z-50 bg-lobison-dark/90 backdrop-blur-md border-b border-red-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 font-display text-2xl text-lobison-red tracking-wider">
+                    LOBISONES <span class="text-white">FIT</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="hover:text-lobison-red px-3 py-2 rounded-md text-sm font-bold transition">INICIO</a>
+                        <a href="#horarios" class="hover:text-lobison-red px-3 py-2 rounded-md text-sm font-bold transition">HORARIOS</a>
+                        <a href="#planes" class="hover:text-lobison-red px-3 py-2 rounded-md text-sm font-bold transition">PLANES</a>
+                        <a href="#contacto" class="bg-lobison-red hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-bold transition">CONTACTO</a>
+                    </div>
+                </div>
+                <!-- Menú Móvil (Hamburguesa) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menú Móvil Desplegable -->
+        <div class="hidden md:hidden bg-lobison-gray" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#inicio" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-bold">INICIO</a>
+                <a href="#horarios" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-bold">HORARIOS</a>
+                <a href="#planes" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-bold">PLANES</a>
+                <a href="#contacto" class="text-lobison-red block px-3 py-2 rounded-md text-base font-bold">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO (Principal) -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden clip-diagonal bg-gradient-to-b from-lobison-dark to-gray-900">
+        <!-- Círculo de fondo rojo difuminado -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full max-w-4xl bg-red-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- LOGO ELIMINADO POR PETICIÓN DEL USUARIO -->
+            
+            <h1 class="text-5xl md:text-7xl font-display uppercase tracking-tight mb-2">
+                <span class="text-white">ENTRENA COMO</span> <br class="md:hidden" />
+                <span class="text-lobison-red text-glow">UNA BESTIA</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400 font-sans tracking-wide">
+                LOBISONES FITNESS <span class="text-lobison-red font-bold">|</span> BY PROFE TITO
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#planes" class="px-8 py-4 border border-transparent text-base font-black rounded-sm text-white bg-lobison-red hover:bg-red-700 md:text-lg md:px-10 uppercase transition shadow-lg shadow-red-600/30">
+                    Empezar Ahora
+                </a>
+                <a href="#horarios" class="px-8 py-4 border-2 border-gray-600 text-base font-black rounded-sm text-gray-300 hover:border-white hover:text-white md:text-lg md:px-10 uppercase transition">
+                    Ver Horarios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN HORARIOS -->
+    <section id="horarios" class="py-20 bg-lobison-gray">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-display text-white uppercase tracking-wider">
+                    Nuestros <span class="text-lobison-red">Horarios</span>
+                </h2>
+                <div class="w-24 h-1 bg-lobison-red mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Turno Mañana -->
+                <div class="bg-lobison-dark p-8 rounded-xl border border-gray-800 hover:border-lobison-red transition duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="w-2 h-8 bg-lobison-red mr-3 rounded-sm"></span> MAÑANA
+                    </h3>
+                    <ul class="space-y-4 text-gray-300 font-semibold">
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span>Lunes a Viernes</span>
+                            <span class="text-lobison-red">07:00 - 11:00 hs</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span>Sábados</span>
+                            <span class="text-lobison-red">09:00 - 13:00 hs</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Turno Tarde -->
+                <div class="bg-lobison-dark p-8 rounded-xl border border-gray-800 hover:border-lobison-red transition duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="w-2 h-8 bg-lobison-red mr-3 rounded-sm"></span> TARDE / NOCHE
+                    </h3>
+                    <ul class="space-y-4 text-gray-300 font-semibold">
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span>Lunes a Viernes</span>
+                            <span class="text-lobison-red">15:00 - 22:00 hs</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span>Sábados</span>
+                            <span class="text-gray-500 italic">Cerrado</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PLANES Y PRECIOS -->
+    <section id="planes" class="py-24 bg-gradient-to-b from-gray-900 to-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-display text-white uppercase tracking-wider">
+                    Planes de <span class="text-lobison-red">Entrenamiento</span>
+                </h2>
+                <p class="mt-4 text-gray-400">Elige tu camino. Transforma tu cuerpo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                
+                <!-- PLAN 1: BÁSICO -->
+                <div class="bg-lobison-gray rounded-2xl p-8 border border-gray-800 card-hover flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-2">Inicial</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-display text-white">$15.000</span>
+                        <span class="text-gray-500">/mes</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1 text-gray-400 text-sm font-medium">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-lobison-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>3 Días por semana</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-lobison-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Acceso Sala Musculación</li>
+                        <li class="flex items-center opacity-50"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Sin seguimiento personalizado</li>
+                    </ul>
+                    <a href="https://wa.me/5493794771743?text=Hola%20Profe%20Tito,%20me%20interesa%20el%20Plan%20Inicial." target="_blank" class="block w-full text-center py-3 border-2 border-white text-white font-bold uppercase tracking-wider hover:bg-white hover:text-black transition rounded-md">
+                        Consultar
+                    </a>
+                </div>
+
+                <!-- PLAN 2: DESTACADO (LOBISÓN) -->
+                <div class="bg-gray-900 rounded-2xl p-8 border-2 border-lobison-red shadow-[0_0_30px_rgba(220,38,38,0.2)] transform md:scale-110 z-10 flex flex-col h-full relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-lobison-red text-white text-xs font-bold px-3 py-1 uppercase">Más Elegido</div>
+                    <h3 class="text-2xl font-bold text-lobison-red uppercase tracking-wide mb-2">Plan Lobisón</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-display text-white">$22.000</span>
+                        <span class="text-gray-500">/mes</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1 text-gray-300 text-sm font-medium">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-lobison-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Pase Libre (Lun a Sab)</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-lobison-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Rutina Personalizada</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-lobison-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Seguimiento de Profe Tito</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-lobison-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Asesoría Nutricional Básica</li>
+                    </ul>
+                    <a href="https://wa.me/5493794771743?text=Hola%20Profe%20Tito,%20quiero%20inscribirme%20al%20Plan%20Lobisón!" target="_blank" class="flex items-center justify-center w-full py-4 bg-lobison-red text-white font-bold uppercase tracking-wider hover:bg-red-700 transition rounded-md shadow-lg animate-pulse">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        ELEGIR ESTE PLAN
+                    </a>
+                </div>
+
+                <!-- PLAN 3: PACK TRIMESTRAL -->
+                <div class="bg-lobison-gray rounded-2xl p-8 border border-gray-800 card-hover flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-2">Trimestral</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-display text-white">$60.000</span>
+                        <span class="text-gray-500">/total</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1 text-gray-400 text-sm font-medium">
+                         <li class="flex items-center"><svg class="w-5 h-5 text-lobison-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Beneficios Plan Lobisón</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-lobison-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ahorras dinero</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-lobison-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Congela cuota por inflación</li>
+                    </ul>
+                    <a href="https://wa.me/5493794771743?text=Hola%20Profe%20Tito,%20me%20interesa%20el%20Pack%20Trimestral." target="_blank" class="block w-full text-center py-3 border-2 border-white text-white font-bold uppercase tracking-wider hover:bg-white hover:text-black transition rounded-md">
+                        Consultar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO & FOOTER -->
+    <section id="contacto" class="bg-black py-16 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-display text-white mb-6 uppercase">Contacto Directo</h2>
+                    <p class="text-gray-400 mb-8">¿Tienes dudas? ¿Quieres empezar hoy mismo? Escríbele directamente al Profe Tito.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-lobison-red mr-4">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            </div>
+                            <span class="text-xl font-bold text-white">3794 771743</span>
+                        </div>
+                         <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-lobison-red mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <span class="text-lg text-gray-300">Cazadores correntinos 5420</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mapa Google Maps (Insertado) -->
+                <div class="w-full rounded-xl overflow-hidden border border-gray-800 shadow-lg shadow-red-900/20">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7078.667157478266!2d-58.7899276!3d-27.4899994!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456b0022401351%3A0xd46efcfc5656c1a8!2sGym%20Lobisones%20Fitness!5e0!3m2!1ses!2sar!4v1764167637919!5m2!1ses!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+            <!-- SECCIÓN REDES SOCIALES (NUEVA) -->
+            <div class="mt-16 text-center">
+                <h3 class="text-white text-xl font-bold uppercase tracking-wider mb-8 flex items-center justify-center">
+                    <span class="w-12 h-0.5 bg-lobison-red mr-4"></span>
+                    Seguinos en Redes
+                    <span class="w-12 h-0.5 bg-lobison-red ml-4"></span>
+                </h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.instagram.com/gym.lobisonesfit/" target="_blank" class="group relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group">
+                        <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-red-600 group-hover:translate-x-0 ease">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.407-.06 3.808-.06h.63zm-12.315-2c-2.756 0-3.084.01-4.156.06-1.11.05-1.874.24-2.54.5-1.144.444-2.115 1.115-2.56 2.56-.26.666-.45 1.43-.5 2.54-.05 1.072-.06 1.4-.06 4.156s.01 3.084.06 4.156c.05 1.11.24 1.874.5 2.54.445 1.444 1.115 2.415 2.56 2.56.666.26 1.43.45 2.54.5 1.072.05 1.4.06 4.156.06s3.084-.01 4.156-.06c1.11-.05 1.874-.24 2.54-.5 1.444-.445 2.415-1.115 2.56-2.56.26-.666.45-1.43.5-2.54.05-1.072.06-1.4.06-4.156s-.01-3.084-.06-4.156c-.05-1.11-.24-1.874-.5-2.54-.445-1.444-1.115-2.415-2.56-2.56-.666-.26-1.43-.45-2.54-.5-1.072-.05-1.4-.06-4.156-.06zm12.315 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <span class="absolute flex items-center justify-center w-full h-full text-red-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.407-.06 3.808-.06h.63zm-12.315-2c-2.756 0-3.084.01-4.156.06-1.11.05-1.874.24-2.54.5-1.144.444-2.115 1.115-2.56 2.56-.26.666-.45 1.43-.5 2.54-.05 1.072-.06 1.4-.06 4.156s.01 3.084.06 4.156c.05 1.11.24 1.874.5 2.54.445 1.444 1.115 2.415 2.56 2.56.666.26 1.43.45 2.54.5 1.072.05 1.4.06 4.156.06s3.084-.01 4.156-.06c1.11-.05 1.874-.24 2.54-.5 1.444-.445 2.415-1.115 2.56-2.56.26-.666.45-1.43.5-2.54.05-1.072.06-1.4.06-4.156s-.01-3.084-.06-4.156c-.05-1.11-.24-1.874-.5-2.54-.445-1.444-1.115-2.415-2.56-2.56-.666-.26-1.43-.45-2.54-.5-1.072-.05-1.4-.06-4.156-.06zm12.315 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" clip-rule="evenodd"></path></svg>
+                            @gym.lobisonesfit
+                        </span>
+                        <span class="relative invisible">@gym.lobisonesfit</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-gray-900 text-center">
+                <p class="text-gray-600">© 2024 Lobisones Fitness. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
